@@ -2,17 +2,63 @@
     background-image: linear-gradient();
 }
 
-.bgForm > div {
+.bgForm>div {
     border: 1px solid var(--border-gray);
     padding: 20px;
-    display: flex;
     justify-content: center;
+    margin: 50px auto;
     align-items: center;
-    /* width: 700px; */
+    border-radius: 10px;
+    width: 340px;
 }
 
-.bgForm > div > p {
+.bgForm>div>p,
+.formInput p {
     color: var(--color-black);
     font-weight: 600;
-    margin-bottom: 30px;
+    margin-bottom: 13px;
 }
+
+.formInput p {
+    margin-bottom: 13px;
+}
+
+.formInput {
+    width: 100%;
+}
+
+.formInput input {
+    border-radius: 5px;
+    padding: 9px 6px;
+    height: 13px;
+    width: calc(100% - 14px);
+    margin-bottom: 7px;
+    border: 1px solid var(--border-gray);
+}
+
+.btnForm {
+    border-radius: 5px;
+    width: 108px;
+    height: 33px;
+    margin-top: 20px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* table */
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }

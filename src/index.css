@@ -6,7 +6,29 @@ body {
   direction: rtl;
 }
 
+button, input {
+  background-color: transparent;
+}
+
+a {
+  text-decoration: none;
+}
+
+input:focus {
+  outline: none;
+}
+
 :root {
   --color-black:#333;
   --border-gray:#ddd;
+}
+
+.flexCol {
+  display: flex;
+  flex-direction: column;
+}
+
+.flexAlign {
+  display: flex;
+  align-items: center;
 }
