@@ -1,26 +1,27 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import "../../styles/Header.css"
-import { ContextSite } from '../../context/ContextWebsite'
+import {ContextSite} from '../../context/ContextWebsite'
 
 const Header = () => {
     return (
-        <ContextSite.consumer>
+        <ContextSite.Consumer>
             {
-                () => {
-                    <div className='header'>
-                        <Link>
+                () => (
+                    <div className='header flexAlign'>
+                        <Link to="/">
                             <span>خانه</span>
                         </Link>
-                        <Link>
+                        <Link to="aboutus">
                             <span>درباره ما</span>
-                        </Link><Link>
+                        </Link>
+                        <Link to="contact">
                             <span>تماس باما</span>
                         </Link>
                     </div>
-                }
+                )
             }
-        </ContextSite.consumer>
+        </ContextSite.Consumer>
     )
 }
 

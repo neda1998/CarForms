@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import "../../styles/CartCar.css"
-import { Link } from 'react-router-dom';
+import axios from 'axios';
+import { getOwnerData } from '../../services/GetData';
+import Button from '../../components/Button/Button';
 
 const CartCar = () => {
   const [formData, setFormData] = useState({
@@ -19,22 +21,33 @@ const CartCar = () => {
     }));
   };
 
+  // useEffect(() => {
+  //   try {
+  //     const getData = axios.get(getOwnerData)
+  //       .then(res => setFormData(res))
+  //       .then(error => console.log(error))
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  //   getData()
+  // }, [])
+
   return (
     <div className='bgForm flexAlign'>
       <div className="flexCol">
         <p>کارت ماشین</p>
         <div className='formInput'>
-          <p>نام مالک</p>
+          {/* <p>نام مالک</p> */}
           <input
             type="text"
-            placeholder='نام'
+            placeholder='نام مالک'
             name="ownerName"
             onChange={handleInputChange}
             value={formData.ownerName}
           />
         </div>
         <div className='formInput'>
-          <p>کد ملی</p>
+          {/* <p>کد ملی</p> */}
           <input
             type="text"
             placeholder='کد ملی'
@@ -44,7 +57,7 @@ const CartCar = () => {
           />
         </div>
         <div className='formInput'>
-          <p>محل صدور</p>
+          {/* <p>محل صدور</p> */}
           <input
             type="text"
             placeholder='محل صدور'
@@ -54,7 +67,7 @@ const CartCar = () => {
           />
         </div>
         <div className='formInput'>
-          <p>نام پدر</p>
+          {/* <p>نام پدر</p> */}
           <input
             type="text"
             placeholder='نام پدر'
@@ -64,7 +77,7 @@ const CartCar = () => {
           />
         </div>
         <div className='formInput'>
-          <p>کدپستی</p>
+          {/* <p>کدپستی</p> */}
           <input
             type="text"
             placeholder='کد پستی'
@@ -73,9 +86,7 @@ const CartCar = () => {
             value={formData.postalCode}
           />
         </div>
-        <Link to="newowner">
-          <button className='btnForm'> ذخیره اطلاعات</button>
-        </Link>
+        <Button text="ذخیره اطلاعات" pathDiff="newowner"/>
       </div>
     </div>
   )

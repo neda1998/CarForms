@@ -1,0 +1,19 @@
+.btnForm {
+    border-radius: 23px;
+    width: 108px;
+    height: 33px;
+    margin-top: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    border: 1px solid var(--color-white);
+    background-color: var(--color-white);
+    color: var(--color-black);
+    transition: all .3s ease-in-out;
+}
+
+.btnForm:hover {
+    color: var(--color-white);
+    border: 1px solid var(--color-black);
+    background-color: var(--color-black);
+}
