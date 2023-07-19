@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 const Button = ({ text, pathDiff }) => {
     return (
         <Link to={pathDiff}>
-            <button className='btnForm'>{text}</button>
+            <button className='btnForm' type='submit'>{text}</button>
         </Link>
     )
 }

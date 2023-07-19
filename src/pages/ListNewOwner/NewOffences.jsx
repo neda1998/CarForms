@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import { DataUser } from "../../data/DataUser"
+// import { DataUser } from "../../data/DataUser"
 
 const NewOffences = () => {
-    const [ownersData, setOwnersData] = useState(DataUser);
+    const [ownersData, setOwnersData] = useState();
 
     return (
         <div className='px-20'>
