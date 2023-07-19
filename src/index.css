@@ -11,7 +11,8 @@ body {
   background-image: linear-gradient(to right, var(--color-main), var(--color-second));
 }
 
-button, input {
+button,
+input {
   background-color: transparent;
 }
 
@@ -28,13 +29,13 @@ input:focus {
 }
 
 :root {
-  --color-black:#333;
-  --border-gray:rgba(255,255,255, .2);
-  --color-main:#cc2b5e;
-  --color-second:#753a88;
-  --color-white:#fff;
-  --color-gray:#1c283d;
-  --color-third: #4e80ba
+  --color-black: #333;
+  --border-gray: rgba(255, 255, 255, .2);
+  --color-main: #cc2b5e;
+  --color-second: #753a88;
+  --color-white: #fff;
+  --color-gray: #1c283d;
+  --color-third: #4e80ba;
 }
 
 .flexCol {

@@ -33,11 +33,10 @@ const CartCar = () => {
   // }, [])
 
   return (
-    <div className='bgForm flexAlign'>
+    <div className='bgForm px-10 flexAlign'>
       <div className="flexCol">
         <p>کارت ماشین</p>
         <div className='formInput'>
-          {/* <p>نام مالک</p> */}
           <input
             type="text"
             placeholder='نام مالک'
@@ -47,7 +46,6 @@ const CartCar = () => {
           />
         </div>
         <div className='formInput'>
-          {/* <p>کد ملی</p> */}
           <input
             type="text"
             placeholder='کد ملی'
@@ -57,7 +55,6 @@ const CartCar = () => {
           />
         </div>
         <div className='formInput'>
-          {/* <p>محل صدور</p> */}
           <input
             type="text"
             placeholder='محل صدور'
@@ -67,7 +64,6 @@ const CartCar = () => {
           />
         </div>
         <div className='formInput'>
-          {/* <p>نام پدر</p> */}
           <input
             type="text"
             placeholder='نام پدر'
@@ -77,7 +73,6 @@ const CartCar = () => {
           />
         </div>
         <div className='formInput'>
-          {/* <p>کدپستی</p> */}
           <input
             type="text"
             placeholder='کد پستی'
@@ -86,7 +81,7 @@ const CartCar = () => {
             value={formData.postalCode}
           />
         </div>
-        <Button text="ذخیره اطلاعات" pathDiff="newowner"/>
+        <Button text="ذخیره اطلاعات" pathDiff="newowner" />
       </div>
     </div>
   )

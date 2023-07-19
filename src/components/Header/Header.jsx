@@ -12,8 +12,8 @@ const Header = () => {
                         <Link to="/">
                             <span>خانه</span>
                         </Link>
-                        <Link to="aboutus">
-                            <span>درباره ما</span>
+                        <Link to="drivingOffences">
+                            <span>انواع جریمه</span>
                         </Link>
                         <Link to="contact">
                             <span>تماس باما</span>
