@@ -1,6 +1,6 @@
-.btnForm {
+.btnForm,.btnFormOwner {
     border-radius: 23px;
-    width: 129px;
+    width: calc(100% - 22px);
     height: 41px;
     margin-top: 10px;
     font-size: 15px;
@@ -16,4 +16,12 @@
     color: var(--color-white);
     border: 1px solid var(--color-black);
     background-color: var(--color-black);
+}
+
+.btnFormOwner {
+    width: 16%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:40px auto 80px;
 }

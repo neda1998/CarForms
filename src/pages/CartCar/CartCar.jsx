@@ -1,213 +1,45 @@
-// // import React, { useEffect, useState } from 'react';
-// import "../../styles/CartCar.css"
-// // import axios from 'axios';
-// // // import { getOwnerData } from '../../services/GetData';
-// import Button from '../../components/Button/Button';
-
-// // const CartCar = () => {
-// //   const [formData, setFormData] = useState({
-// //     ownerName: "",
-// //     nationalCode: "",
-// //     issuePlace: "",
-// //     fatherName: "",
-// //     postalCode: ""
-// //   });
-
-// //   const handleInputChange = (e) => {
-// //     const { name, value } = e.target;
-// //     setFormData(prevState => ({
-// //       ...prevState,
-// //       [name]: value
-// //     }));
-// //   };
-
-// //   // useEffect(() => {
-// //   //   try {
-// //   //     const getData = axios.get(getOwnerData)
-// //   //       .then(res => setFormData(res))
-// //   //       .then(error => console.log(error))
-// //   //   } catch (error) {
-// //   //     console.log(error);
-// //   //   }
-// //   //   getData()
-// //   // }, [])
-
-// //   return (
-// //     <div className='bgForm px-10 flexAlign'>
-// //       <div className="flexCol">
-// //         <p>کارت ماشین</p>
-// //         <div className='formInput'>
-// //           <input
-// //             type="text"
-// //             placeholder='نام مالک'
-// //             name="ownerName"
-// //             onChange={handleInputChange}
-// //             value={formData.ownerName}
-// //           />
-// //         </div>
-// //         <div className='formInput'>
-// //           <input
-// //             type="text"
-// //             placeholder='کد ملی'
-// //             name="nationalCode"
-// //             onChange={handleInputChange}
-// //             value={formData.nationalCode}
-// //           />
-// //         </div>
-// //         <div className='formInput'>
-// //           <input
-// //             type="text"
-// //             placeholder='محل صدور'
-// //             name="issuePlace"
-// //             onChange={handleInputChange}
-// //             value={formData.issuePlace}
-// //           />
-// //         </div>
-// //         <div className='formInput'>
-// //           <input
-// //             type="text"
-// //             placeholder='نام پدر'
-// //             name="fatherName"
-// //             onChange={handleInputChange}
-// //             value={formData.fatherName}
-// //           />
-// //         </div>
-// //         <div className='formInput'>
-// //           <input
-// //             type="text"
-// //             placeholder='کد پستی'
-// //             name="postalCode"
-// //             onChange={handleInputChange}
-// //             value={formData.postalCode}
-// //           />
-// //         </div>
-// //         <Button text="ذخیره اطلاعات" pathDiff="newowner" />
-// //       </div>
-// //     </div>
-// //   )
-// // }
-
-// // export default CartCar;
-
-// import React, { useState } from 'react';
-// import { useTable } from 'react-table';
-
-// const App = () => {
-//   // State برای ذخیره داده‌های فرم
-//   const [formData, setFormData] = useState({ name: '', age: '', email: '' });
-//   // State برای ذخیره داده‌های جدول
-//   const [tableData, setTableData] = useState([]);
-
-//   // متد برای ذخیره داده‌های فرم در State جدول
-//   const handleSubmit = (e) => {
-//     e.preventDefault();
-//     setTableData([...tableData, formData]);
-//     setFormData({ name: '', age: '', email: '' });
-//   };
-
-//   // متد برای تغییر State داده‌های فرم
-//   const handleChange = (e) => {
-//     const { name, value } = e.target;
-//     setFormData((prevFormData) => ({ ...prevFormData, [name]: value }));
-//   };
-
-//   // تعریف ستون‌های جدول
-//   const columns = React.useMemo(
-//     () => [
-//       {
-//         Header: 'نام',
-//         accessor: 'name',
-//       },
-//       {
-//         Header: 'سن',
-//         accessor: 'age',
-//       },
-//       {
-//         Header: 'ایمیل',
-//         accessor: 'email',
-//       },
-//     ],
-//     []
-//   );
-
-//   // ایجاد جدول با استفاده از react-table
-//   const {
-//     getTableProps,
-//     getTableBodyProps,
-//     headerGroups,
-//     rows,
-//     prepareRow,
-//   } = useTable({ columns, data: tableData });
-
-//   return (
-//     <div>
-//       <form onSubmit={handleSubmit}>
-//         <input
-//           type="text"
-//           placeholder="نام"
-//           name="name"
-//           value={formData.name}
-//           onChange={handleChange}
-//         />
-//         <input
-//           type="number"
-//           placeholder="سن"
-//           name="age"
-//           value={formData.age}
-//           onChange={handleChange}
-//         />
-//         <input
-//           type="email"
-//           placeholder="ایمیل"
-//           name="email"
-//           value={formData.email}
-//           onChange={handleChange}
-//         />
-//         <Button pathDiff="newowner" text="دخیره اطلاعات" />
-//       </form>
-
-//       {/* table */}
-//       {/* <table {...getTableProps()} style={{ marginTop: '20px' }}>
-//         <thead>
-//           {headerGroups.map((headerGroup) => (
-//             <tr {...headerGroup.getHeaderGroupProps()}>
-//               {headerGroup.headers.map((column) => (
-//                 <th {...column.getHeaderProps()}>{column.render('Header')}</th>
-//               ))}
-//             </tr>
-//           ))}
-//         </thead>
-//         <tbody {...getTableBodyProps()}>
-//           {rows.map((row) => {
-//             prepareRow(row);
-//             return (
-//               <tr {...row.getRowProps()}>
-//                 {row.cells.map((cell) => (
-//                   <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
-//                 ))}
-//               </tr>
-//             );
-//           })}
-//         </tbody>
-//       </table> */}
-//     </div>
-//   );
-// };
-
-// export default App;
-
-import React, { useState } from 'react';
+import React, { useState,useCallback, useEffect } from 'react';
 import NewOwner from './NewOwner';
-import Button from "../../components/Button/Button"
+import "../../styles/CartCar.css";
 
-const App = () => {
-  const [formData, setFormData] = useState({ name: '', age: '', email: '' });
+const CartCar = () => {
+  const [formData, setFormData] = useState({
+    ownerName: '',
+    nationalCode: '',
+    issueLocation: '',
+    fatherName: '',
+    postalCode: '',
+  });
+
   const [tableData, setTableData] = useState([]);
+  const [showNewOwner, setShowNewOwner] = useState(false);
+
+  const handleDeleteRow = useCallback((index) => {
+    const updatedTableData = JSON.parse(localStorage.getItem('tableData') || '[]');
+    updatedTableData.splice(index, 1);
+    setTableData(updatedTableData);
+    localStorage.setItem('tableData', JSON.stringify(updatedTableData));
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    saveDataToLocalStorage(formData); // ذخیره اطلاعات در localStorage
     setTableData([...tableData, formData]);
-    setFormData({ name: '', age: '', email: '' });
+    setFormData({
+      ownerName: '',
+      nationalCode: '',
+      issueLocation: '',
+      fatherName: '',
+      postalCode: '',
+    });
+  };
+
+  const saveDataToLocalStorage = (data) => {
+    const previousData = localStorage.getItem('tableData');
+    const parsedPreviousData = previousData ? JSON.parse(previousData) : [];
+    const newData = [...parsedPreviousData, data];
+    setTableData(newData);
+    localStorage.setItem('tableData', JSON.stringify(newData));
   };
 
   const handleChange = (e) => {
@@ -215,40 +47,70 @@ const App = () => {
     setFormData((prevFormData) => ({ ...prevFormData, [name]: value }));
   };
 
+  const handleShowNewOwner = () => {
+    setShowNewOwner(prevState => !prevState);
+  };
+
+  useEffect(() => {
+    const previousData = localStorage.getItem('tableData');
+    const parsedPreviousData = previousData ? JSON.parse(previousData) : [];
+    setTableData(parsedPreviousData);
+  }, []);
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      {showNewOwner ? (
+        <NewOwner handleDeleteRow={handleDeleteRow} tableData={tableData}/>
+      ) : (
+        <div className='bgForm px-10 flexCol'>
+          <p>کارت ماشین</p>
+          <form onSubmit={handleSubmit}>
+          <input
+            type="text"
+            placeholder="نام مالک"
+            name="ownerName"
+            value={formData.ownerName}
+            onChange={handleChange}
+            className='formInput'
+          />
+           <input
+          type="number"
+          placeholder="کد ملی"
+          name="nationalCode"
+          value={formData.nationalCode}
+          onChange={handleChange}
+          className='formInput'
+        />
         <input
           type="text"
-          placeholder="نام"
-          name="name"
-          value={formData.name}
+          placeholder="محل صدور"
+          name="issueLocation"
+          value={formData.issueLocation}
           onChange={handleChange}
+          className='formInput'
         />
         <input
-          type="number"
-          placeholder="سن"
-          name="age"
-          value={formData.age}
+          type="text"
+          placeholder="نام پدر"
+          name="fatherName"
+          value={formData.fatherName}
           onChange={handleChange}
+          className='formInput'
         />
         <input
-          type="email"
-          placeholder="ایمیل"
-          name="email"
-          value={formData.email}
+          type="text"
+          placeholder="کد پستی"
+          name="postalCode"
+          value={formData.postalCode}
           onChange={handleChange}
+          className='formInput'
         />
-        <button type="submit">ثبت</button>
-        {/* <Button pathDiff="newowner" text="دخیره اطلاعات" /> */}
-
-      </form>
-
-      {/* فرستادن داده‌های جدول به کامپوننت جدول */}
-      <NewOwner tableData={tableData} />
+            <button className='btnForm' type="submit">ذخیره اطلاعات</button>
+          <button className='btnForm' onClick={handleShowNewOwner}>نمایش اطلاعات</button>
+          </form>
+        </div>
+      )}
     </div>
   );
 };
 
-export default App;
-
+export default CartCar;

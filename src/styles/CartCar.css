@@ -1,35 +1,36 @@
-.bgForm>div {
+.bgForm {
     border: 1px solid var(--border-gray);
     padding: 20px;
     justify-content: center;
     margin: 50px auto;
     align-items: center;
     border-radius: 10px;
-    width: 340px;
+    width: 420px;
     background: hsla(0, 0%, 100%, .1);
+    height: 550px;
 }
 
-.bgForm>div>p,
-.formInput p {
-    margin-bottom: 25px;
+.bgForm p {
+    margin-bottom: 20px;
 }
 
-.formInput input::placeholder,.bgForm>div>p,
-.formInput p{
+.formInput::placeholder,
+.bgForm>p {
     font-weight: 600;
-    color:var(--color-white);
+    color: var(--color-white);
     font-size: 17px;
-}
-
-.formInput p {
-    margin-bottom: 13px;
 }
 
 .formInput {
     width: 100%;
 }
 
-.formInput input {
+input:hover {
+    background-color: transparent;
+}
+
+.formInput {
+    background-color: transparent;
     border-radius: 23px;
     padding: 9px 17px 9px 0px;
     height: 40px;
@@ -39,18 +40,26 @@
 }
 
 /* table */
+.tableForm h2{
+margin: 20px 0;
+font-weight: 600;
+
+}
+
 
 table {
     border-collapse: collapse;
     width: 100%;
-  }
-  
-  td, th {
+    background: hsla(0, 0%, 100%, .2);
+}
+
+td,
+th {
     border: 1px solid #dddddd;
-    text-align: left;
+    text-align: right;
     padding: 8px;
-  }
-  
-  tr:nth-child(even) {
+}
+
+tr:nth-child(even) {
     background-color: #dddddd;
-  }
+}

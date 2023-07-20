@@ -5,7 +5,7 @@ import Home from '../pages/Home/Home'
 import NewOwner from '../pages/CartCar/NewOwner'
 import Contact from '../pages/Contact/Contact'
 import DrivingOffences from '../pages/DrivingOffences/DrivingOffences'
-import NewOffences from '../pages/ListNewOwner/NewOffences'
+import NewOffences from '../pages/DrivingOffences/NewOffences'
 
 const RouteWebsite = () => {
   return (
