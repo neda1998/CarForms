@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom'
 
 const Button = ({ text, pathDiff }) => {
     return (
-        <Link to={pathDiff}>
-            <button className='btnForm' type='submit'>{text}</button>
+        <Link to={pathDiff} className='btnFormWel'>
+            <button className='' type='submit'>{text}</button>
         </Link>
     )
 }

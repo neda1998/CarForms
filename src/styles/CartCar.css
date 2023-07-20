@@ -7,7 +7,6 @@
     border-radius: 10px;
     width: 420px;
     background: hsla(0, 0%, 100%, .1);
-    height: 550px;
 }
 
 .bgForm p {
@@ -37,6 +36,16 @@ input:hover {
     width: calc(100% - 22px);
     margin-bottom: 30px;
     border: 1px solid var(--border-gray);
+}
+
+.btnDelete {
+    color: red;
+}
+
+.listcars {
+    color: var(--color-white);
+    font-weight: 600;
+    margin-top: 10px;
 }
 
 /* table */

@@ -1,91 +1,92 @@
-import React, { useEffect, useState } from 'react';
-import "../../styles/CartCar.css"
-import axios from 'axios';
-import { getOwnerData } from '../../services/GetData';
-import Button from '../../components/Button/Button';
+import React, { useState, useCallback, useEffect } from 'react';
+import NewOffences from './NewOffences';
+import "../../styles/CartCar.css";
 
 const DrivingOffences = () => {
     const [formData, setFormData] = useState({
-        ownerName: "",
-        nationalCode: "",
-        issuePlace: "",
-        fatherName: "",
-        postalCode: ""
+        ownerName: '',
+        countPenalty: '',
+        issueLocation: '',
+        fatherName: '',
+        postalCode: '',
     });
 
-    const handleInputChange = (e) => {
-        const { name, value } = e.target;
-        setFormData(prevState => ({
-            ...prevState,
-            [name]: value
-        }));
+    const [tableData, setTableData] = useState([]);
+    const [showNewOwner, setShowNewOwner] = useState(false);
+
+    const handleDeleteRow = useCallback((index) => {
+        const updatedTableData = JSON.parse(localStorage.getItem('tableData') || '[]');
+        updatedTableData.splice(index, 1);
+        setTableData(updatedTableData);
+        localStorage.setItem('tableData', JSON.stringify(updatedTableData));
+    }, []);
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        saveDataToLocalStorage(formData);
+        setTableData([...tableData, formData]);
+        setFormData({
+            typePenalty: '',
+            countPenalty: '',
+            issueLocation: '',
+            fatherName: '',
+            postalCode: '',
+        });
     };
 
-    // useEffect(() => {
-    //   try {
-    //     const getData = axios.get(getOwnerData)
-    //       .then(res => setFormData(res))
-    //       .then(error => console.log(error))
-    //   } catch (error) {
-    //     console.log(error);
-    //   }
-    //   getData()
-    // }, [])
+    const saveDataToLocalStorage = (data) => {
+        const previousData = localStorage.getItem('tableData');
+        const parsedPreviousData = previousData ? JSON.parse(previousData) : [];
+        const newData = [...parsedPreviousData, data];
+        setTableData(newData);
+        localStorage.setItem('tableData', JSON.stringify(newData));
+    };
 
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData((prevFormData) => ({ ...prevFormData, [name]: value }));
+    };
+
+    const handleShowNewOwner = () => {
+        setShowNewOwner(prevState => !prevState);
+    };
+
+    useEffect(() => {
+        const previousData = localStorage.getItem('tableData');
+        const parsedPreviousData = previousData ? JSON.parse(previousData) : [];
+        setTableData(parsedPreviousData);
+    }, []);
     return (
-        <div className='bgForm flexAlign'>
-            <div className="flexCol">
-                <p>انواع جریمه</p>
-                <div className='formInput'>
-                    <input
-                        type="text"
-                        placeholder='نام مالک'
-                        name="ownerName"
-                        onChange={handleInputChange}
-                        value={formData.ownerName}
-                    />
+        <div>
+            {showNewOwner ? (
+                <NewOffences handleDeleteRow={handleDeleteRow} tableData={tableData} />
+            ) : (
+                <div className='bgForm px-10 flexCol'>
+                    <p>انواع جریمه</p>
+                    <form onSubmit={handleSubmit}>
+                        <input
+                            type="text"
+                            placeholder="نوع جریمه"
+                            name="typepenalty"
+                            value={formData.typePenalty}
+                            onChange={handleChange}
+                            className='formInput'
+                        />
+                        <input
+                            type="number"
+                            placeholder="میزان جریمه"
+                            name="countpenalty"
+                            value={formData.countPenalty}
+                            onChange={handleChange}
+                            className='formInput'
+                        />
+                        <button className='btnForm' type="submit">ذخیره اطلاعات</button>
+                        <button className='btnForm' onClick={handleShowNewOwner}>نمایش اطلاعات</button>
+                    </form>
                 </div>
-                <div className='formInput'>
-                    <input
-                        type="text"
-                        placeholder='کد ملی'
-                        name="nationalCode"
-                        onChange={handleInputChange}
-                        value={formData.nationalCode}
-                    />
-                </div>
-                <div className='formInput'>
-                    <input
-                        type="text"
-                        placeholder='محل صدور'
-                        name="issuePlace"
-                        onChange={handleInputChange}
-                        value={formData.issuePlace}
-                    />
-                </div>
-                <div className='formInput'>
-                    <input
-                        type="text"
-                        placeholder='نام پدر'
-                        name="fatherName"
-                        onChange={handleInputChange}
-                        value={formData.fatherName}
-                    />
-                </div>
-                <div className='formInput'>
-                    <input
-                        type="text"
-                        placeholder='کد پستی'
-                        name="postalCode"
-                        onChange={handleInputChange}
-                        value={formData.postalCode}
-                    />
-                </div>
-                <Button text="ذخیره اطلاعات" pathDiff="newoffences" />
-            </div>
+            )}
         </div>
-    )
-}
+    );
+};
 
 export default DrivingOffences;
-

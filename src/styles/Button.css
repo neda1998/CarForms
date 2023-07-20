@@ -1,4 +1,4 @@
-.btnForm,.btnFormOwner {
+.btnForm,.btnFormOwner,.btnFormWel button,.btnSearch{
     border-radius: 23px;
     width: calc(100% - 22px);
     height: 41px;
@@ -18,10 +18,14 @@
     background-color: var(--color-black);
 }
 
-.btnFormOwner {
+.btnFormOwner, .btnFormWel button {
     width: 16%;
     display: flex;
     justify-content: center;
     align-items: center;
     margin:40px auto 80px;
+}
+
+.btnFormWel{
+    width: 100%;
 }

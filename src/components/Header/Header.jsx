@@ -15,8 +15,11 @@ const Header = () => {
                         <Link to="drivingOffences">
                             <span>انواع جریمه</span>
                         </Link>
-                        <Link to="contact">
-                            <span>تماس باما</span>
+                        <Link to="cartag">
+                            <span>استعلام</span>
+                        </Link>
+                        <Link to="registerfines">
+                            <span>ثبت جریمه ها</span>
                         </Link>
                     </div>
                 )

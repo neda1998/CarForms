@@ -23,7 +23,7 @@ const CartCar = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    saveDataToLocalStorage(formData); // ذخیره اطلاعات در localStorage
+    saveDataToLocalStorage(formData); 
     setTableData([...tableData, formData]);
     setFormData({
       ownerName: '',
