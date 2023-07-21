@@ -11,6 +11,25 @@
     -webkit-text-fill-color: transparent;
 }
 
-.welcome button {
-    margin-top: 20px;
+.btnFormWel button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 23px;
+    padding: 0 40px;
+    height: 41px;
+    margin-top: 30px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    border: 1px solid var(--color-white);
+    background-color: var(--color-white);
+    color: var(--color-black);
+    transition: all .3s ease-in-out;
+}
+
+.btnFormWel button:hover {
+    color: var(--color-white);
+    border: 1px solid var(--color-black);
+    background-color: var(--color-black);
 }

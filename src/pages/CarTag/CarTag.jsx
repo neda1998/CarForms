@@ -11,9 +11,9 @@ const Cartag = () => {
 
   const handleSearchClick = () => {
     const staticPenaltyCars = [
-      { id: 1, plateNumber: '1234567', make: 'BMW', model: 'X5', penalty: '100$' },
-      { id: 2, plateNumber: '4567890', make: 'Audi', model: 'A4', penalty: '75$' },
-      { id: 3, plateNumber: '7890123', make: 'Toyota', model: 'Corolla', penalty: '50$' },
+      { id: 1, plateNumber: '12 ل712- 29', make: 'پراید', penalty: '100 میلیون' },
+      { id: 2, plateNumber: '12ب300-200', make: 'پژو', penalty: '75$میلیون' },
+      { id: 3, plateNumber: '30ق98-400', make: 'تیبا', penalty: '50$میلیون' },
     ];
 
     const filteredCars = staticPenaltyCars.filter((car) =>
@@ -29,7 +29,7 @@ const Cartag = () => {
       <ul>
         {penaltyCars.map((car) => (
           <li key={car.id} className='listcars'>
-            شماره پلاک: {car.plateNumber} - {car.make} {car.model} - جریمه: {car.penalty}
+            شماره پلاک: {car.plateNumber} - {car.make} - جریمه: {car.penalty}
           </li>
         ))}
       </ul>

@@ -80,6 +80,30 @@ const DrivingOffences = () => {
                             onChange={handleChange}
                             className='formInput'
                         />
+                        <input
+                            type="text"
+                            placeholder="محل صدور"
+                            name="issuelocation"
+                            value={formData.issueLocation}
+                            onChange={handleChange}
+                            className='formInput'
+                        />
+                        <input
+                            type="text"
+                            placeholder="کد پستی"
+                            name="postalcode"
+                            value={formData.postalCode}
+                            onChange={handleChange}
+                            className='formInput'
+                        />
+                        <input
+                            type="text"
+                            placeholder="نام پدر"
+                            name="fathername"
+                            value={formData.fatherName}
+                            onChange={handleChange}
+                            className='formInput'
+                        />
                         <button className='btnForm' type="submit">ذخیره اطلاعات</button>
                         <button className='btnForm' onClick={handleShowNewOwner}>نمایش اطلاعات</button>
                     </form>

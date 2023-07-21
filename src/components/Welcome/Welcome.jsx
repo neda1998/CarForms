@@ -1,12 +1,14 @@
 import React from 'react'
 import "../../styles/Welcome.css"
-import Button from '../Button/Button'
+import { Link } from 'react-router-dom'
 
 const Welcome = () => {
   return (
     <div className='welcome flexCol'>
       <h1>خوش امدید</h1>
-     <Button pathDiff="cartcar" text="ثبت اطلاعات"/>
+      <Link to="caracart" className='btnFormWel'>
+        <button type='submit' >ثبت اطلاعات</button>
+      </Link>
     </div>
   )
 }

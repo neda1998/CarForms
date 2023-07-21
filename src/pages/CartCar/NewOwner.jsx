@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 const NewOwner = ({ handleDeleteRow }) => {
   const tableData = JSON.parse(localStorage.getItem('tableData') || '[]')
